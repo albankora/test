@@ -16,4 +16,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: docker run -it api-dev yarn test
+        run: docker run -i api-dev yarn test
