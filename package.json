@@ -5,7 +5,8 @@
     "dev": "nodemon -L -e ts --exec \"yarn build && yarn start\"",
     "build": "tsc -p .",
     "test": "echo \"no test found\"",
-    "clean": "docker system prune -a --volumes"
+    "docker:clean": "docker system prune -a --volumes",
+    "docker:build": "docker build -t api-prd -f prd.Dockerfile ."
   },
   "dependencies": {
     "express": "^4.18.2"
