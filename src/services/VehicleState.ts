@@ -1,5 +1,0 @@
-export class VehicleState {
-    latestState(){
-        
-    }
-}
