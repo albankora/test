@@ -10,6 +10,8 @@
       "forceConsistentCasingInFileNames": true,
       "allowJs": false,
       "sourceMap": false,
-      "moduleResolution": "node"
-  }
+      "moduleResolution": "node",
+      "types": ["node", "jest"],
+  },
+  "exclude": ["**/*.test.*", "**/__mocks__/*", "**/__tests__/*"]
 }

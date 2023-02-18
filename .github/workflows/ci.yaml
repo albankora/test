@@ -20,4 +20,4 @@ jobs:
       - name: Unit Test
         run: docker run -i api-dev yarn test
       - name: Integration Test
-        run: docker run -i api-dev yarn test
+        run: docker run -i api-dev yarn test:integration
