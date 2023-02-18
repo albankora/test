@@ -8,5 +8,6 @@ ENV NODE_ENV development
 WORKDIR /usr/src/app
 COPY ["package.json", "yarn.lock", "tsconfig.json", ".eslintrc", ".eslintignore", "./"]
 COPY ./src ./src
+COPY ./tests ./tests
 RUN yarn
 CMD ["yarn", "dev"]
