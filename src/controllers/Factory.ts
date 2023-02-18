@@ -1,10 +1,10 @@
 import { VehicleState } from "./VehicleState";
 
-export type Controllers = {
+export type ControllerList = {
     vehicleState: VehicleState
 }
 
-export function buildControllers(): Controllers {
+export function build(): ControllerList {
     return {
         vehicleState: new VehicleState(),
     };

@@ -1,6 +1,6 @@
 import express from "express";
-import { Controllers } from "./controllers/Controllers";
+import { ControllerList } from "./controllers/Factory";
 
-export function buildRoutes(app: express.Express, controllers: Controllers) {
-    app.get("/test", controllers.vehicleState.latest);
+export function buildRoutes(app: express.Express, controllerList: ControllerList) {
+    app.get("/test", controllerList.vehicleState.handle);
 }

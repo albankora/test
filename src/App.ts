@@ -1,11 +1,11 @@
 import express from "express";
 import { buildRoutes } from "./Routes";
-import { buildControllers } from "./controllers/Controllers";
+import { build } from "./controllers/Factory";
 
 const app = express();
 
-const controllers = buildControllers();
-buildRoutes(app, controllers);
+const controllerList = build();
+buildRoutes(app, controllerList);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running at ${process.env.PORT}`);

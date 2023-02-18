@@ -1,7 +1,7 @@
 name: docker-compose-actions-workflow
 on: push
 jobs:
-  test:
+  BuildAndTest:
     runs-on: ubuntu-latest
     env:
       PORT: 3000
@@ -15,5 +15,9 @@ jobs:
           node-version: 18
       - name: Build the stack
         run: docker-compose up -d
-      - name: Test
+      - name: Lint
+        run: docker run -i api-dev yarn lint
+      - name: Unit Test
+        run: docker run -i api-dev yarn test
+      - name: Integration Test
         run: docker run -i api-dev yarn test
