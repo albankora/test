@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
 USER node
 WORKDIR /usr/src/app
 COPY --chown=node:node . .
-COPY ["package.json", "yarn.lock", "tsconfig.json", ".env", "./"]
+COPY ["package.json", "yarn.lock", "tsconfig.json", "./"]
 COPY ./src ./src
 COPY --chown=node:node . /usr/src/app
 RUN yarn install

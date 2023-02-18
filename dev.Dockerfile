@@ -6,7 +6,7 @@ COPY ./scripts/dump.sql ./scripts/motorway-test-backend/dump.sql
 FROM node:18.12.0-bullseye-slim AS api-dev
 ENV NODE_ENV development
 WORKDIR /usr/src/app
-COPY ["package.json", "yarn.lock", "tsconfig.json", "./"]
+COPY ["package.json", "yarn.lock", "tsconfig.json", ".eslintrc", ".eslintignore", "./"]
 COPY ./src ./src
 RUN yarn
 CMD ["yarn", "dev"]
