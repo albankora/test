@@ -1,6 +1,6 @@
 import express from "express";
-import { buildRoutes } from "./Routes";
 import { build } from "./controllers/Factory";
+import { buildRoutes } from "./Routes";
 
 const app = express();
 
