@@ -4,7 +4,7 @@
     "start": "node ./dist/App.js",
     "dev": "nodemon -L -e ts --exec \"yarn build && yarn start\"",
     "build": "tsc -p .",
-    "test": "jest ./src --passWithNoTests",
+    "test": "jest ./src",
     "test:integration": "jest ./tests",
     "lint": "eslint . --ext .ts",
     "docker:clean": "docker system prune -a --volumes",

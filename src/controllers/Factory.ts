@@ -1,4 +1,4 @@
-import { buildLogger } from "../libs/log/logger";
+import { buildLogger } from "../libs/Logger";
 import { StateLogs } from "../repos/StateLogs";
 import { VehicleState } from "./VehicleState";
 
