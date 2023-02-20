@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { Logger } from "../Libs/Logger";
-import { ResponseBuilder } from "../Libs/ResponseBuilder";
-import { Controller } from "./Controller";
+import { Logger } from "src/Libs/Logger";
+import { ResponseBuilder } from "src/Libs/ResponseBuilder";
+import { Controller } from "src/Controllers/Controller";
 
 export class NotFound extends Controller {
     constructor(private logger: Logger) {
