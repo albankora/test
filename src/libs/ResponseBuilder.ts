@@ -1,19 +1,18 @@
 export type Response = {
-    code: number
-    data: Record<string, unknown> | Record<string, unknown>[],
-    meta: Record<string, unknown>,
-    error: Record<string, unknown>[] | string
-}
+    code: number;
+    data: unknown;
+    meta: Record<string, unknown>;
+    error: Record<string, unknown>[] | string | unknown;
+};
 
 export class ResponseBuilder {
-
-    ok(data: Record<string, unknown>[], meta: Record<string, unknown>): Response {
+    ok(data: unknown, meta: Record<string, unknown> = {}): Response {
         return {
             code: 200,
             data,
             meta,
-            error: []
-        }
+            error: {},
+        };
     }
 
     created(data: Record<string, unknown>[]): Response {
@@ -21,8 +20,8 @@ export class ResponseBuilder {
             code: 201,
             data,
             meta: {},
-            error: []
-        }
+            error: {},
+        };
     }
 
     noContent(): Response {
@@ -30,17 +29,17 @@ export class ResponseBuilder {
             code: 204,
             data: {},
             meta: {},
-            error: []
-        }
+            error: {},
+        };
     }
 
-    internalServiceError(): Response {
+    internalServerError(error: unknown): Response {
         return {
             code: 500,
             data: {},
             meta: {},
-            error: "Internal Server Error"
-        }
+            error: { type: "InternalServerError", error },
+        };
     }
 
     notFound(): Response {
@@ -48,16 +47,16 @@ export class ResponseBuilder {
             code: 404,
             data: {},
             meta: {},
-            error: "Not Found"
-        }
+            error: { type: "NotFound" },
+        };
     }
 
-    badRequest(error: Record<string, unknown>[] | string): Response {
+    badRequest(error: unknown): Response {
         return {
             code: 400,
             data: {},
             meta: {},
-            error
-        }
+            error: { type: "BadRequest", error },
+        };
     }
 }

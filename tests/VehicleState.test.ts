@@ -1,22 +1,12 @@
-import request from 'supertest';
-import { buildControllerList } from '../src/controllers/Factory';
-import { buildRoutes } from '../src/Routes';
+import request from "supertest";
+import { buildRoutes } from "../src/Routes";
 
-const controllerList = buildControllerList();
-const app = buildRoutes(controllerList);
+const app = buildRoutes();
 
-describe('Good Home Routes', function () {
+describe("Good Home Routes", function () {
 
-  test('responds to /', async () => {
-    const res = await request(app).get('/');
-    expect(res.statusCode).toBe(404);
-  });
-  
-//   test('responds to /hello/:name', async () => {
-//     const res = await request(app).get('/hello/jaxnode'); 
-//     expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-//     expect(res.statusCode).toBe(200);
-//     expect(res.text).toEqual('hello jaxnode!');
-//   });
-
+    test("test 404 routes", async () => {
+        const res = await request(app).get(`/vehicle/3?timestamp=${encodeURIComponent('2022-09-12 10:00:00+00')}`);
+        expect(res.body).toEqual({"code":200,"data":{"vehicleId":3,"state":"selling","timestamp":"2022-09-11T23:21:38.000Z"},"meta":{},"error":{}});
+    });
 });

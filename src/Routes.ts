@@ -1,10 +1,15 @@
 import express from "express";
-import { ControllerList } from "./controllers/Factory";
+import { buildControllerList } from "./Controllers/Factory";
 
-export function buildRoutes(controllerList: ControllerList) {
+export function buildRoutes() {
     const app = express();
+    app.use(express.json({ limit: "5MB" }));
+    const controllerList = buildControllerList();
 
-    app.get("/test", (req, res) => controllerList.vehicleState.handle(req, res));
+    app.get("/vehicle/:vehicleId", (req, res) => controllerList.vehicleState.handle(req, res));
+
+    //this has to be the last route
+    app.use("*", (req, res) => controllerList.notFound.handle(req, res));
 
     return app;
 }
