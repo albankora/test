@@ -5,7 +5,7 @@
     "dev": "nodemon -L -e ts --exec \"yarn build && yarn start\"",
     "build": "tsc -p .",
     "test": "jest --testPathPattern=./src",
-    "test:integration": "jest --testPathPattern=./tests",
+    "test:integration": "jest --testPathPattern=./tests --forceExit",
     "lint": "eslint . --ext .ts",
     "format": "prettier 'src/**/*.ts' 'tests/**/*.ts' --write",
     "docker:clean": "docker system prune -a --volumes",
