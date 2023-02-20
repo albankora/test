@@ -1,5 +1,5 @@
 import { Request, Response as ExpressResponse } from "express";
-import { Response } from "src/Libs/ResponseBuilder";
+import { Response } from "src/libs/ResponseBuilder";
 
 export abstract class Controller {
     respond(res: ExpressResponse, response: Response) {

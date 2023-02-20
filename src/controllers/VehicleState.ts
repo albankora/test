@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { z, ZodError } from "zod";
-import { Logger } from "src/Libs/Logger";
-import { ResponseBuilder } from "src/Libs/ResponseBuilder";
-import { StateLogs } from "src/Repos/StateLogs";
-import { Controller } from "src/Controllers/Controller";
+import { Logger } from "src/libs/Logger";
+import { ResponseBuilder } from "src/libs/ResponseBuilder";
+import { StateLogs } from "src/repos/StateLogs";
+import { Controller } from "src/controllers/Controller";
 
 const dataSchema = z.object({
     params: z.object({

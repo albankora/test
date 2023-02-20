@@ -1,5 +1,5 @@
 import express from "express";
-import { buildControllerList } from "src/Controllers/Factory";
+import { buildControllerList } from "src/controllers/Factory";
 
 export function buildRoutes() {
     const app = express();
