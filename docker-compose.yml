@@ -15,7 +15,6 @@ services:
   api:
     image: api-dev
     container_name: api
-    restart: always
     build:
       context: .
       dockerfile: ./api.Dockerfile
