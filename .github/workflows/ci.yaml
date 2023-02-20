@@ -16,8 +16,8 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Lint
-        run: docker exec api yarn lint
+        run: docker run --rm -i api-dev yarn lint
       - name: Unit Test
-        run: docker exec api yarn test
+        run: docker run --rm -i api-dev yarn test
       - name: Integration Test
         run: docker exec api yarn test:integration
