@@ -1,8 +1,8 @@
-import { dbInstance } from "src/libs/Knex";
-import { loggerInstance } from "src/libs/Logger";
-import { StateLogs } from "src/repos/StateLogs";
-import { NotFound } from "src/controllers/NotFound";
-import { VehicleState } from "src/controllers/VehicleState";
+import { dbInstance } from "../libs/Knex";
+import { loggerInstance } from "../libs/Logger";
+import { StateLogs } from "../repos/StateLogs";
+import { NotFound } from "../controllers/NotFound";
+import { VehicleState } from "../controllers/VehicleState";
 
 export type ControllerList = ReturnType<typeof buildControllerList>;
 

@@ -1,5 +1,5 @@
 import request from "supertest";
-import { buildRoutes } from "src/Routes";
+import { buildRoutes } from "../src/Routes";
 
 const app = buildRoutes();
 const server = app.listen(3000);

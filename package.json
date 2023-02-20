@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/App.js",
+    "start": "node ./dist/src/App.js",
     "dev": "nodemon -L -e ts --exec \"yarn build && yarn start\"",
     "build": "tsc -p .",
     "test": "jest --testPathPattern=./src",
@@ -9,7 +9,8 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier 'src/**/*.ts' 'tests/**/*.ts' --write",
     "docker:clean": "docker system prune -a --volumes",
-    "docker:build": "docker build -t api-prd -f prd.Dockerfile ."
+    "docker:prd:build": "docker build -t api-prd -f prd.Dockerfile .",
+    "docker:prd:run": "docker run --rm -it -p 3001:3001 -e PORT=3001 -e POSTGRES_HOST=0.0.0.0 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=motorway api-prd"
   },
   "dependencies": {
     "express": "^4.18.2",

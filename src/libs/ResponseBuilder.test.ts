@@ -1,4 +1,4 @@
-import { ResponseBuilder } from "src/libs/ResponseBuilder";
+import { ResponseBuilder } from "../libs/ResponseBuilder";
 
 describe("Response builder", function () {
     test("internal server error", () => {

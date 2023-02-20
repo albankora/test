@@ -1,4 +1,4 @@
-import { buildRoutes } from "src/Routes";
+import { buildRoutes } from "./Routes";
 
 const app = buildRoutes();
 
