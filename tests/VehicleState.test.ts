@@ -2,6 +2,12 @@ import request from "supertest";
 import { buildRoutes } from "src/Routes";
 
 const app = buildRoutes();
+const server = app.listen(3000);
+
+afterAll(() => {
+    server.close()
+})
+
 
 describe("Vehicle state endpoint", function () {
     test("Test correct response", async () => {
