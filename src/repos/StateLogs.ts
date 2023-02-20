@@ -9,7 +9,7 @@ type StateLogsRecord = {
 const TABLE = "stateLogs";
 
 export class StateLogs {
-    constructor(private db: Knex) { }
+    constructor(private db: Knex) {}
 
     async findVehiclesState(id: number, timestamp: string): Promise<StateLogsRecord | undefined> {
         return await this.db<StateLogsRecord>(TABLE)
